@@ -1,4 +1,4 @@
-import { svg, arm } from './ViewSource.module.css'
+import { svg, arm } from './ViewSource.module.scss'
 
 const ViewSource = ({ pathname }) => (
   <svg

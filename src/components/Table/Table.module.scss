@@ -1,0 +1,18 @@
+.root {
+  max-width: 100%;
+  width: 100%;
+
+  td {
+    vertical-align: middle;
+  }
+
+  th {
+    text-align: left;
+  }
+}
+
+.striped tbody {
+  tr:nth-of-type(odd) {
+    background-color: #f2f3f8;
+  }
+}
