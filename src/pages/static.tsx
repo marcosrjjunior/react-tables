@@ -3,7 +3,7 @@ import ViewSource from 'components/ViewSource'
 import s from '../styles.module.scss'
 import Table from 'components/Table/Table'
 import { format } from 'date-fns'
-import { useEffect } from 'react'
+import { Card, Container } from 'components/Layout'
 
 /* Generate faker data
 function generateUsers() {
@@ -39,8 +39,8 @@ let dataObj = generateUsers();
 */
 
 const Simple = ({ data }) => (
-  <div className={s.container}>
-    <div className={s.card}>
+  <Container>
+    <Card>
       <ViewSource pathname="pages/simple.js" />
       {console.log(data)}
 
@@ -67,8 +67,8 @@ const Simple = ({ data }) => (
           ))}
         </tbody>
       </Table>
-    </div>
-  </div>
+    </Card>
+  </Container>
 )
 
 export async function getStaticProps() {

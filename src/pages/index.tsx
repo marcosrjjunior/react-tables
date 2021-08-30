@@ -1,13 +1,14 @@
-import s from '../styles.module.scss'
-import Image from 'next/image'
 import Link from 'next/link'
 import ViewSource from 'components/ViewSource'
+import { Card, Container } from 'components/Layout'
+
+import s from '../styles.module.scss'
 
 const Index = () => (
-  <div className={s.container}>
+  <Container>
     <ViewSource pathname="pages/index.js" />
 
-    <div className={s.card}>
+    <Card>
       <h1>React Tables</h1>
       <p>
         The goal with this page is to to show you examples of tables using
@@ -19,6 +20,18 @@ const Index = () => (
             <a>simple</a>
           </Link>
         </li>
+
+        <li>
+          <Link href="/pagination">
+            <a>pagination</a>
+          </Link>
+        </li>
+
+        <li>
+          <Link href="/row-selection">
+            <a>row selection</a>
+          </Link>
+        </li>
       </ul>
 
       <p>
@@ -26,14 +39,14 @@ const Index = () => (
         you.
       </p>
 
-      <hr className={s.hr} />
+      <hr />
       <h2 id="more">Learn More</h2>
       <p>If you want to know some reasons why I created this examples.</p>
       <p>
         Checkout the <a href="post">React tables post</a>{' '}
       </p>
-    </div>
-  </div>
+    </Card>
+  </Container>
 )
 
 export default Index
