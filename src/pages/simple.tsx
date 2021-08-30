@@ -1,16 +1,13 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import { format } from 'date-fns'
 
-import Overlay from 'components/Overlay/Overlay'
-import Pagination from 'components/Pagination/Pagination'
 import Table from 'components/Table/Table'
 import ViewSource from 'components/ViewSource'
 import { fetchData } from 'services/simpleService'
 import { Card, Container } from 'components/Layout'
-
-import s from '../styles.module.scss'
 
 /* Generate faker data
 function generateUsers() {
@@ -47,28 +44,17 @@ let dataObj = generateUsers();
 
 const Simple = () => {
   const [data, setData] = useState([])
-  const [page, setPage] = useState(1)
-  const [totalPages, setTotalPages] = useState(0)
-  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
-    setIsLoading(true)
-
-    fetchData({ page }).then(response => {
-      // The setTimeout is just to simulate data coming from the server
-      setTimeout(() => {
-        setData(response.data)
-        setTotalPages(response.pages)
-
-        setIsLoading(false)
-      }, 300)
-    })
-  }, [page])
+    fetchData({ page: 1 }).then(response => setData(response.data))
+  }, [])
 
   return (
     <>
       <Head>
-        <title>Simple - React tables</title>
+        <title>
+          <Link href="/">&#8672; </Link> Simple - React tables
+        </title>
       </Head>
 
       <Container>
@@ -77,15 +63,7 @@ const Simple = () => {
 
           <h1>Simple</h1>
 
-          <Pagination
-            totalPages={totalPages}
-            page={page}
-            onPageChange={nextPage => setPage(nextPage)}
-          />
-
           <div className="position-relative overflow-x">
-            {isLoading && <Overlay />}
-
             <Table striped>
               <thead>
                 <tr>

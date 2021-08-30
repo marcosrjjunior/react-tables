@@ -1,6 +1,9 @@
+type SortType = { column: string; direction: string }
+
 type FetchDataProps = {
-  page: number
+  page?: number
   perPage?: number
+  sort?: SortType
 }
 
 type DataType = {
@@ -12,6 +15,8 @@ type DataType = {
 }
 
 type FetchDataResponse = { data: DataType[]; pages: number }
+
+// ---------------------------------------------------------------
 
 const fetchData = async ({
   page,
@@ -25,6 +30,22 @@ const fetchData = async ({
   return response
 }
 
-export type { DataType }
+// ---------------------------------------------------------------
 
-export { fetchData }
+const fetchDataWithSort = async ({
+  sort = {
+    column: '',
+    direction: 'asc'
+  }
+}: FetchDataProps): Promise<FetchDataResponse> => {
+  // TODO: implement your error handler here : )
+  const response = await fetch(
+    `/api/sort?column=${sort.column}&direction=${sort.direction}`
+  ).then(response => response.json())
+
+  return response
+}
+
+export type { DataType, SortType }
+
+export { fetchData, fetchDataWithSort }

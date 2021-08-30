@@ -17,13 +17,9 @@ const Table = ({
   ...props
 }: Props) => (
   <table
-    className={cx(
-      s.root,
-      {
-        [s.striped]: striped
-      },
-      className
-    )}
+    className={cx(s.root, className, {
+      [s.striped]: striped
+    })}
     {...props}
   >
     {children}

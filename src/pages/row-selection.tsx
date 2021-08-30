@@ -1,40 +1,28 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import { format } from 'date-fns'
+import cx from 'classnames'
 
-import Overlay from 'components/Overlay/Overlay'
-import Pagination from 'components/Pagination/Pagination'
 import Table from 'components/Table/Table'
 import ViewSource from 'components/ViewSource'
 import { DataType, fetchData } from 'services/simpleService'
 import { Card, Container } from 'components/Layout'
 
-import s from '../styles/pages/row-selection.module.scss'
-
-import cx from 'classnames'
+import s from '../styles/pages/RowSelection.module.scss'
 
 const RowSelection = () => {
   const [data, setData] = useState<DataType[]>([])
-  const [isLoading, setIsLoading] = useState(false)
-
   const [selectedRow, setSelectedRow] = useState<DataType>()
 
   useEffect(() => {
-    setIsLoading(true)
-
-    fetchData({ page: 1 }).then(response => {
-      // The setTimeout is just to simulate data coming from the server
-      setTimeout(() => {
-        setData(response.data)
-
-        setIsLoading(false)
-      }, 300)
-    })
+    fetchData({ page: 1 }).then(response => setData(response.data))
   }, [])
 
   const selectRow = (row: DataType) => {
-    alert(JSON.stringify(row))
+    // alert(JSON.stringify(row))
+    console.log(row)
     setSelectedRow(row)
   }
 
@@ -48,11 +36,11 @@ const RowSelection = () => {
         <Card>
           <ViewSource pathname="pages/row-selection.js" />
 
-          <h1>Row selection</h1>
+          <h1>
+            <Link href="/">&#8672; </Link> Row selection
+          </h1>
 
           <div className="position-relative overflow-x">
-            {isLoading && <Overlay />}
-
             <Table striped className={s.root}>
               <thead>
                 <tr>

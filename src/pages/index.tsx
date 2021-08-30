@@ -32,6 +32,18 @@ const Index = () => (
             <a>row selection</a>
           </Link>
         </li>
+
+        <li>
+          <Link href="/sorting">
+            <a>sorting</a>
+          </Link>
+        </li>
+
+        <li>
+          <Link href="/static">
+            <a>static</a>
+          </Link>
+        </li>
       </ul>
 
       <p>

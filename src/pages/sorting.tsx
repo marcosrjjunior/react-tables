@@ -9,17 +9,27 @@ import Table from 'components/Table/Table'
 import Pagination from 'components/Pagination/Pagination'
 import { Card, Container } from 'components/Layout'
 import ViewSource from 'components/ViewSource'
-import { DataType, fetchData } from 'services/simpleService'
+import { DataType, SortType, fetchDataWithSort } from 'services/simpleService'
 
-const PaginationTable = () => {
+const SortIcon = {
+  asc: <span>&#8639;</span>,
+  desc: <span>&#8643;</span>
+}
+
+const Sorting = () => {
   const [data, setData] = useState<DataType[]>([])
   const [page, setPage] = useState(1)
   const [totalPages, setTotalPages] = useState(0)
   const [isLoading, setIsLoading] = useState(true)
 
+  const [sort, setSort] = useState<SortType>({
+    column: '', // set the default column sort here if required
+    direction: 'desc'
+  })
+
   useEffect(() => {
     setIsLoading(true)
-    fetchData({ page }).then(response => {
+    fetchDataWithSort({ page, sort }).then(response => {
       // The setTimeout is just to simulate data coming from the server
       setTimeout(() => {
         setData(response.data)
@@ -28,7 +38,30 @@ const PaginationTable = () => {
         setIsLoading(false)
       }, 200)
     })
-  }, [page])
+  }, [page, sort])
+
+  const applySort = column => {
+    let direction = 'asc'
+    if (column === sort?.column && sort?.direction === 'desc') {
+      return setSort({
+        ...sort,
+        ...{
+          column: '',
+          direction: 'desc'
+        }
+      })
+    }
+
+    if (sort?.direction === 'asc') {
+      direction = 'desc'
+      return setSort({ ...sort, ...{ column, direction } })
+    }
+
+    if (sort?.direction === 'desc') {
+      setSort({ ...sort, ...{ column, direction } })
+      return true
+    }
+  }
 
   return (
     <>
@@ -41,7 +74,7 @@ const PaginationTable = () => {
           <ViewSource pathname="pages/pagination.js" />
 
           <h1>
-            <Link href="/">&#8672; </Link> Pagination
+            <Link href="/">&#8672; </Link> Sorting
           </h1>
 
           <Pagination
@@ -56,8 +89,19 @@ const PaginationTable = () => {
             <Table striped>
               <thead>
                 <tr>
-                  <th>First name</th>
-                  <th>Last name</th>
+                  <th onClick={() => applySort('first_name')}>
+                    First name
+                    {sort?.column === 'first_name'
+                      ? SortIcon[sort.direction]
+                      : ''}
+                  </th>
+
+                  <th onClick={() => applySort('last_name')}>
+                    Last name
+                    {sort?.column === 'last_name'
+                      ? SortIcon[sort.direction]
+                      : ''}
+                  </th>
                   <th>Email</th>
                   <th>Date of Birth</th>
                 </tr>
@@ -83,4 +127,4 @@ const PaginationTable = () => {
   )
 }
 
-export default PaginationTable
+export default Sorting
