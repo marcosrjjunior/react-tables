@@ -50,6 +50,12 @@ const Index = () => (
             <a>static</a>
           </Link>
         </li>
+
+        <li>
+          <Link href="/react-window">
+            <a>react-window</a>
+          </Link>
+        </li>
       </ul>
 
       <p>

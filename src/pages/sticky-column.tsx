@@ -33,7 +33,7 @@ const StickyColumn = () => {
 
       <Container>
         <Card>
-          <ViewSource pathname="pages/simple.js" />
+          <ViewSource pathname="pages/sticky-column.js" />
 
           <h1>
             <Link href="/">&#8672; </Link> Sticky column

@@ -71,7 +71,7 @@ const Sorting = () => {
 
       <Container>
         <Card>
-          <ViewSource pathname="pages/pagination.js" />
+          <ViewSource pathname="pages/sorting.js" />
 
           <h1>
             <Link href="/">&#8672; </Link> Sorting

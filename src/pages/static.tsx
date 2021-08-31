@@ -13,7 +13,7 @@ const Static = ({ data }) => (
     <Card>
       <ViewSource pathname="pages/static.js" />
 
-      <ViewSource pathname="pages/row-selection.js" />
+      <ViewSource pathname="pages/static.js" />
 
       <h1>
         <Link href="/">&#8672; </Link> Static next.js

@@ -1,0 +1,10 @@
+.odd {
+  background-color: var(--gray-200);
+}
+
+.grid {
+  & > div > div {
+    word-break: break-word;
+    overflow: hidden;
+  }
+}
