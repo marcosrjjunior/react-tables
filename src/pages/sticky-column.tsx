@@ -9,51 +9,25 @@ import ViewSource from 'components/ViewSource'
 import { fetchData } from 'services/simpleService'
 import { Card, Container } from 'components/Layout'
 
-/* Generate faker data
-function generateUsers() {
+import s from '../styles/pages/StickyColumn.module.scss'
 
-  let users = []
-
-  for (let id=1; id <= 2500; id++) {
-
-    let firstName = faker.name.firstName();
-    let lastName = faker.name.lastName();
-    let username = faker.internet.userName();
-    let email = faker.internet.email();
-    let jobTitle = faker.name.jobTitle();
-    let dob = faker.date.past();
-    let avatar = faker.image.avatar();
-
-    users.push({
-        id,
-        first_name: firstName,
-        last_name: lastName,
-        username,
-        email,
-        job: {title:jobTitle},
-        dob,
-        avatar,
-    });
-  }
-
-  return { "data": users }
+const sticky = {
+  firstNameCol: 120
 }
 
-let dataObj = generateUsers();
-*/
-
-const Simple = () => {
+const StickyColumn = () => {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    fetchData({ page: 1 }).then(response => setData(response.data))
+    fetchData({ page: 1, perPage: 15 }).then(response => setData(response.data))
   }, [])
 
+  console.log('data', data)
   return (
     <>
       <Head>
         <title>
-          <Link href="/">&#8672; </Link> Simple - React tables
+          <Link href="/">&#8672; </Link> Sticky column - React tables
         </title>
       </Head>
 
@@ -62,29 +36,49 @@ const Simple = () => {
           <ViewSource pathname="pages/simple.js" />
 
           <h1>
-            <Link href="/">&#8672; </Link> Simple
+            <Link href="/">&#8672; </Link> Sticky column
           </h1>
 
           <div className="position-relative overflow-x">
-            <Table striped>
+            <Table striped className={s.table}>
               <thead>
                 <tr>
-                  <th>First name</th>
+                  <th
+                    className="sticky"
+                    style={{
+                      maxWidth: sticky.firstNameCol,
+                      minWidth: sticky.firstNameCol,
+                      left: 0
+                    }}
+                  >
+                    First name
+                  </th>
                   <th>Last name</th>
                   <th>Email</th>
-                  <th>Date of Birth</th>
+                  <th>Username</th>
+                  <th className={s.dobCol}>Date of Birth</th>
+                  <th className={s.jobCol}>Job</th>
                 </tr>
               </thead>
 
               <tbody>
                 {data.map(row => (
                   <tr key={row.id}>
-                    <td>
+                    <td
+                      className="sticky"
+                      style={{
+                        maxWidth: sticky.firstNameCol,
+                        minWidth: sticky.firstNameCol,
+                        left: 0
+                      }}
+                    >
                       <a href="#">{row.first_name}</a>
                     </td>
                     <td>{row.last_name}</td>
                     <td>{row.email}</td>
+                    <td>{row.username}</td>
                     <td>{format(new Date(row.dob), 'dd/mm/yyyy')}</td>
+                    <td>{row.job.title}</td>
                   </tr>
                 ))}
               </tbody>
@@ -96,4 +90,4 @@ const Simple = () => {
   )
 }
 
-export default Simple
+export default StickyColumn

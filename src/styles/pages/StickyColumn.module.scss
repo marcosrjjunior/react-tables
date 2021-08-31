@@ -1,0 +1,24 @@
+.table {
+  thead th {
+    background-color: white;
+  }
+
+  tr {
+    td {
+      background-color: white;
+    }
+    &:nth-of-type(odd) {
+      td {
+        background-color: var(--gray-200)
+      }
+    }
+  }
+}
+
+.dobCol {
+  min-width: 100px;
+}
+
+.jobCol {
+  min-width: 300px;
+}

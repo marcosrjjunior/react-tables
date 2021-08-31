@@ -40,6 +40,12 @@ const Index = () => (
         </li>
 
         <li>
+          <Link href="/sticky-column">
+            <a>sticky-column</a>
+          </Link>
+        </li>
+
+        <li>
           <Link href="/static">
             <a>static</a>
           </Link>
