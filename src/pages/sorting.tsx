@@ -5,11 +5,12 @@ import { format } from 'date-fns'
 
 import Overlay from 'components/Overlay/Overlay'
 import Table from 'components/Table/Table'
-import Pagination from 'components/Pagination/Pagination'
 import Meta from 'components/Meta'
 import ViewSource from 'components/ViewSource'
 import { Card, Container } from 'components/Layout'
 import { DataType, SortType, fetchDataWithSort } from 'services/simpleService'
+
+import s from '../styles/pages/Sorting.module.scss'
 
 const SortIcon = {
   asc: <span>&#8639;</span>,
@@ -18,10 +19,7 @@ const SortIcon = {
 
 const Sorting = () => {
   const [data, setData] = useState<DataType[]>([])
-  const [page, setPage] = useState(1)
-  const [totalPages, setTotalPages] = useState(0)
   const [isLoading, setIsLoading] = useState(true)
-
   const [sort, setSort] = useState<SortType>({
     column: '', // set the default column sort here if required
     direction: 'desc'
@@ -29,16 +27,15 @@ const Sorting = () => {
 
   useEffect(() => {
     setIsLoading(true)
-    fetchDataWithSort({ page, sort }).then(response => {
+    fetchDataWithSort({ page: 1, sort }).then(response => {
       // The setTimeout is just to simulate data coming from the server
       setTimeout(() => {
         setData(response.data)
-        setTotalPages(response.pages)
 
         setIsLoading(false)
       }, 200)
     })
-  }, [page, sort])
+  }, [sort])
 
   const applySort = column => {
     let direction = 'asc'
@@ -75,16 +72,10 @@ const Sorting = () => {
             <Link href="/">&#8672; </Link> Sorting
           </h1>
 
-          <Pagination
-            totalPages={totalPages}
-            page={page}
-            onPageChange={nextPage => setPage(nextPage)}
-          />
-
           <div className="position-relative overflow-x">
             {isLoading && <Overlay />}
 
-            <Table striped>
+            <Table striped className={s.table}>
               <thead>
                 <tr>
                   <th onClick={() => applySort('first_name')}>

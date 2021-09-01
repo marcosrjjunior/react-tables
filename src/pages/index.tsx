@@ -68,10 +68,11 @@ const Index = () => (
       </p>
 
       <hr />
+
       <h2 id="more">Learn More</h2>
-      <p>If you want to know some reasons why I created this examples.</p>
       <p>
-        Checkout the <a href="post">React tables post</a>{' '}
+        If you want to know the reasons why I created this page, check the{' '}
+        <a href="post">React tables post</a>{' '}
       </p>
     </Card>
   </Container>
