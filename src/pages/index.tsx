@@ -63,8 +63,7 @@ const Index = () => (
       </ul>
 
       <p>
-        Please feel free to use any of the examples, I hope that is helpful for
-        you.
+        Feel free to use any of the examples, I hope that is helpful for you.
       </p>
 
       <hr />
@@ -72,7 +71,9 @@ const Index = () => (
       <h2 id="more">Learn More</h2>
       <p>
         If you want to know the reasons why I created this page, check the{' '}
-        <a href="post">React tables post</a>{' '}
+        <a href="https://marcosrjjunior.com/blog/how-to-implement-tables-using-reactjs">
+          React tables post
+        </a>
       </p>
     </Card>
   </Container>

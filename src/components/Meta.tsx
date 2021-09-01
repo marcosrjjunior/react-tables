@@ -23,7 +23,7 @@ const Meta = ({
   const origin =
     image.indexOf('marcosrjjunior.com') !== -1
       ? ''
-      : 'https://marcosrjjunior.com/'
+      : 'https://marcosrjjunior.com'
 
   return (
     <Head>
