@@ -1,10 +1,10 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import { FixedSizeGrid as Grid } from 'react-window'
 
 import ViewSource from 'components/ViewSource'
+import Meta from 'components/Meta'
 import { fetchData } from 'services/simpleService'
 import { Card, Container } from 'components/Layout'
 
@@ -37,11 +37,7 @@ const ReactWindow = () => {
 
   return (
     <>
-      <Head>
-        <title>
-          <Link href="/">&#8672; </Link> React window - React tables
-        </title>
-      </Head>
+      <Meta title="React window - React tables" url="/react-window" />
 
       <Container>
         <Card>

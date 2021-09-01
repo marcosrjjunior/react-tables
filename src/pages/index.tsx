@@ -1,19 +1,23 @@
 import Link from 'next/link'
 import ViewSource from 'components/ViewSource'
 import { Card, Container } from 'components/Layout'
+import Meta from 'components/Meta'
 
 import s from '../styles.module.scss'
 
 const Index = () => (
   <Container>
+    <Meta url="/" />
+
     <ViewSource pathname="pages/index.js" />
 
     <Card>
       <h1>React Tables</h1>
       <p>
-        The goal with this page is to to show you examples of tables using
-        reactjs closest to the real-world as possible.
+        The goal of this page is to show you examples of tables using reactjs
+        closest to the real world scenario as possible.
       </p>
+
       <ul>
         <li>
           <Link href="/simple">

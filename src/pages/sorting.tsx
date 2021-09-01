@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
@@ -7,8 +6,9 @@ import { format } from 'date-fns'
 import Overlay from 'components/Overlay/Overlay'
 import Table from 'components/Table/Table'
 import Pagination from 'components/Pagination/Pagination'
-import { Card, Container } from 'components/Layout'
+import Meta from 'components/Meta'
 import ViewSource from 'components/ViewSource'
+import { Card, Container } from 'components/Layout'
 import { DataType, SortType, fetchDataWithSort } from 'services/simpleService'
 
 const SortIcon = {
@@ -65,9 +65,7 @@ const Sorting = () => {
 
   return (
     <>
-      <Head>
-        <title>Row selection - React tables</title>
-      </Head>
+      <Meta title="Sorting - React tables" url="/sorting" />
 
       <Container>
         <Card>

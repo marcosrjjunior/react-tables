@@ -5,14 +5,15 @@ import { chunk } from 'lodash'
 
 import ViewSource from 'components/ViewSource'
 import Table from 'components/Table/Table'
+import Meta from 'components/Meta'
 import { Card, Container } from 'components/Layout'
 import simple from 'data/simple.json'
 
 const Static = ({ data }) => (
   <Container>
-    <Card>
-      <ViewSource pathname="pages/static.js" />
+    <Meta title="Static - React tables" url="/static" />
 
+    <Card>
       <ViewSource pathname="pages/static.js" />
 
       <h1>

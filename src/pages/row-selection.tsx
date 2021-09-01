@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
@@ -7,6 +6,7 @@ import cx from 'classnames'
 
 import Table from 'components/Table/Table'
 import ViewSource from 'components/ViewSource'
+import Meta from 'components/Meta'
 import { DataType, fetchData } from 'services/simpleService'
 import { Card, Container } from 'components/Layout'
 
@@ -28,9 +28,7 @@ const RowSelection = () => {
 
   return (
     <>
-      <Head>
-        <title>Row selection - React tables</title>
-      </Head>
+      <Meta title="Row selection - React tables" url="/row-selection" />
 
       <Container>
         <Card>

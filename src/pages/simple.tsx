@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
@@ -6,6 +5,7 @@ import { format } from 'date-fns'
 
 import Table from 'components/Table/Table'
 import ViewSource from 'components/ViewSource'
+import Meta from 'components/Meta'
 import { fetchData } from 'services/simpleService'
 import { Card, Container } from 'components/Layout'
 
@@ -51,11 +51,7 @@ const Simple = () => {
 
   return (
     <>
-      <Head>
-        <title>
-          <Link href="/">&#8672; </Link> Simple - React tables
-        </title>
-      </Head>
+      <Meta title="Simple - React tables" url="/simple" />
 
       <Container>
         <Card>

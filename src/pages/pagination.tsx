@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
@@ -7,8 +6,9 @@ import { format } from 'date-fns'
 import Overlay from 'components/Overlay/Overlay'
 import Table from 'components/Table/Table'
 import Pagination from 'components/Pagination/Pagination'
-import { Card, Container } from 'components/Layout'
+import Meta from 'components/Meta'
 import ViewSource from 'components/ViewSource'
+import { Card, Container } from 'components/Layout'
 import { DataType, fetchData } from 'services/simpleService'
 
 const PaginationTable = () => {
@@ -32,9 +32,7 @@ const PaginationTable = () => {
 
   return (
     <>
-      <Head>
-        <title>Row selection - React tables</title>
-      </Head>
+      <Meta title="Pagination - React tables" url="/pagination" />
 
       <Container>
         <Card>
