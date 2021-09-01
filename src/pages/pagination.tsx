@@ -20,13 +20,10 @@ const PaginationTable = () => {
   useEffect(() => {
     setIsLoading(true)
     fetchData({ page }).then(response => {
-      // The setTimeout is just to simulate data coming from the server
-      setTimeout(() => {
-        setData(response.data)
-        setTotalPages(response.pages)
+      setData(response.data)
+      setTotalPages(response.pages)
 
-        setIsLoading(false)
-      }, 200)
+      setIsLoading(false)
     })
   }, [page])
 
