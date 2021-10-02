@@ -41,7 +41,7 @@ const ReactWindow = () => {
 
       <Container>
         <Card>
-          <ViewSource pathname="pages/react-window.js" />
+          <ViewSource pathname="src/pages/react-window.tsx" />
 
           <h1>
             <Link href="/">&#8672; </Link> React window

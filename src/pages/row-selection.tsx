@@ -32,7 +32,7 @@ const RowSelection = () => {
 
       <Container>
         <Card>
-          <ViewSource pathname="pages/row-selection.js" />
+          <ViewSource pathname="src/pages/row-selection.tsx" />
 
           <h1>
             <Link href="/">&#8672; </Link> Row selection

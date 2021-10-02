@@ -66,7 +66,7 @@ const Sorting = () => {
 
       <Container>
         <Card>
-          <ViewSource pathname="pages/sorting.js" />
+          <ViewSource pathname="src/pages/sorting.tsx" />
 
           <h1>
             <Link href="/">&#8672; </Link> Sorting

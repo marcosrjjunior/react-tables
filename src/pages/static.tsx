@@ -14,7 +14,7 @@ const Static = ({ data }) => (
     <Meta title="Static - React tables" url="/static" />
 
     <Card>
-      <ViewSource pathname="pages/static.js" />
+      <ViewSource pathname="src/pages/static.tsx" />
 
       <h1>
         <Link href="/">&#8672; </Link> Static next.js

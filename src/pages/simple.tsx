@@ -55,7 +55,7 @@ const Simple = () => {
 
       <Container>
         <Card>
-          <ViewSource pathname="pages/simple.js" />
+          <ViewSource pathname="src/pages/index.tsx" />
 
           <h1>
             <Link href="/">&#8672; </Link> Simple

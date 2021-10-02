@@ -11,7 +11,7 @@ const ViewSource = ({ pathname }) => (
   >
     <a
       title="View Source"
-      href={`https://github.com/marcosrjjunior/react-tables/${pathname}`}
+      href={`https://github.com/marcosrjjunior/react-tables/blob/main/${pathname}`}
     >
       <path d="M0 0l115 115h15l12 27 108 108V0z" fill="#fff" />
       <path

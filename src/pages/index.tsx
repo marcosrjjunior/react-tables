@@ -9,7 +9,7 @@ const Index = () => (
   <Container>
     <Meta url="/" />
 
-    <ViewSource pathname="pages/index.js" />
+    <ViewSource pathname="src/pages/index.tsx" />
 
     <Card>
       <h1>React Tables</h1>

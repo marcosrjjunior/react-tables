@@ -33,7 +33,7 @@ const PaginationTable = () => {
 
       <Container>
         <Card>
-          <ViewSource pathname="pages/pagination.js" />
+          <ViewSource pathname="src/pages/pagination.tsx" />
 
           <h1>
             <Link href="/">&#8672; </Link> Pagination
