@@ -72,6 +72,8 @@ const Sorting = () => {
             <Link href="/">&#8672; </Link> Sorting
           </h1>
 
+          <p>Sorting by first name and last name.</p>
+
           <div className="position-relative overflow-x">
             {isLoading && <Overlay />}
 

@@ -38,6 +38,12 @@ const RowSelection = () => {
             <Link href="/">&#8672; </Link> Row selection
           </h1>
 
+          <p>
+            You could use this approach on a scenario where you have some view
+            open on top of the table like a drawer, modal and would like to keep
+            the row marked as "selected".
+          </p>
+
           <div className="position-relative overflow-x">
             <Table striped className={s.root}>
               <thead>

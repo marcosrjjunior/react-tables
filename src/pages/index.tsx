@@ -13,65 +13,53 @@ const Index = () => (
 
     <Card>
       <h1>React Tables</h1>
-      <p>
-        The goal of this page is to show you examples of tables using reactjs
-        closest to the real world scenario as possible.
-      </p>
+      <p>Examples of tables, mostly without using any dependency.</p>
 
       <ul>
         <li>
-          <Link href="/simple">
-            <a>simple</a>
-          </Link>
+          <Link href="/simple">simple</Link>
         </li>
 
         <li>
-          <Link href="/pagination">
-            <a>pagination</a>
-          </Link>
+          <Link href="/pagination">pagination</Link>
         </li>
 
         <li>
-          <Link href="/row-selection">
-            <a>row selection</a>
-          </Link>
+          <Link href="/row-selection">row selection</Link>
         </li>
 
         <li>
-          <Link href="/sorting">
-            <a>sorting</a>
-          </Link>
+          <Link href="/sorting">sorting</Link>
         </li>
 
         <li>
-          <Link href="/sticky-column">
-            <a>sticky-column</a>
-          </Link>
+          <Link href="/sticky-column">sticky-column</Link>
         </li>
 
         <li>
-          <Link href="/static">
-            <a>static</a>
-          </Link>
+          <Link href="/static">static</Link>
         </li>
 
+        <li>TODO: url state</li>
+      </ul>
+
+      <p>Using dependencies</p>
+      <ul>
         <li>
-          <Link href="/react-window">
-            <a>react-window</a>
-          </Link>
+          <Link href="/react-window">react-window</Link>
         </li>
       </ul>
 
-      <p>
-        Feel free to use any of the examples, I hope that is helpful for you.
-      </p>
+      <p>Feel free to use any of the examples in your project.</p>
 
       <hr />
 
-      <h2 id="more">Learn More</h2>
       <p>
         If you want to know the reasons why I created this page, check the{' '}
-        <a href="https://marcosrjjunior.com/blog/how-to-implement-tables-using-reactjs">
+        <a
+          target="_blank"
+          href="https://marcosrjjunior.com/blog/implementing-tables-using-reactjs"
+        >
           React tables post
         </a>
       </p>
